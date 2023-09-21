@@ -21,7 +21,7 @@ import { CategorySelectorComponent } from './category-selector/category-selector
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerImmediately',
     }),
     BrowserAnimationsModule
   ],
