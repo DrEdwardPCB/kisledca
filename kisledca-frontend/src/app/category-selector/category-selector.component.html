@@ -1,0 +1,14 @@
+<div class="overflow-scroll">
+  <div class="flex gap-3">
+    <ng-template ngFor let-option [ngForOf]="options" let-i="index">
+      <div *ngIf="option.selected; else elseBlock cursor-pointer" class="badge badge-primary w-fit whitespace-nowrap">
+        {{option.name}}
+      </div>
+      <ng-template #elseBlock>
+        <div class="cursor-pointer badge badge-secondary w-fit whitespace-nowrap" (click)="onClickCategory(option.name)">
+          {{option.name}}
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>
