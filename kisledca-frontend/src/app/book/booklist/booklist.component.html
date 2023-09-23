@@ -1,0 +1,25 @@
+<div class="p-4">
+  <p>booklist worked!</p>
+  <div>
+    <div class="flex gap-4">
+    <button class="btn btn-primary" (click)="requestList()"> request list </button>
+    <button class="btn btn-primary" (click)="clearAll()"> clear all</button>
+
+    </div>
+    <div class = 'flex gap-4'>
+    <ng-template ngFor let-book [ngForOf]="booklist" let-i="index">
+      <div class = "p-4 rounded btn" (click)="requestIndividual(book.id)">
+        <p>{{book.bookName}}</p>
+        <p>{{book.category}}</p>
+      </div>
+    </ng-template>
+    </div>
+  </div>
+  <div *ngIf="individualBook!==null" class="p-4 m-4 rounded bg-primary">
+    <p>{{individualBook!.bookName}}</p>
+    <p>{{individualBook!.price}}</p>
+    <p>{{individualBook!.category}}</p>
+    <p>{{individualBook!.author}}</p>
+    <p>{{individualBook!.id}}</p>
+  </div>
+</div>
