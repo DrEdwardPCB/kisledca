@@ -1,0 +1,26 @@
+{
+	"compilerOptions": {
+		"lib": ["ES2021"],
+		"module": "ESNext",
+		"target": "ES2021",
+		"allowUnusedLabels": true,
+		"strictPropertyInitialization": false,
+		"moduleResolution": "bundler",
+		"moduleDetection": "force",
+		"composite": true,
+		"strict": true,
+		"downlevelIteration": true,
+		"skipLibCheck": true,
+		"jsx": "preserve",
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"allowJs": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"outDir": "dist",
+		"types": [
+			"bun-types" // add Bun global
+		]
+	},
+	"include": ["src"]
+}

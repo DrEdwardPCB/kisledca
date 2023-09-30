@@ -1,0 +1,16 @@
+{
+  "name": "kisledca-backend",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "workspaces": [
+    "apps/auth",
+    "apps/common-helpers",
+    "apps/shopping-list"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "common-helpers",
+  "module": "index.ts",
+  "type": "module",
+  "main": "./bin/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.199",
+    "@types/winston": "^2.4.4",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "winston": "^3.10.0"
+  }
+}
