@@ -6,15 +6,15 @@ import NumberButton from './numberButton.vue';
   const emit = defineEmits<{(e:'click', button:string):void}>()
 </script>
 <template>
-  <div class="grid gird-cols-4 grid-rows-4 gap-4">
-    <div class="grid grid-cols-3 grid-rows-4 col-span-3 row-span-4 gap-4">
+  <div class="tw-grid tw-gird-cols-4 tw-grid-rows-4 tw-gap-4">
+    <div class="tw-gap-4 tw-grid tw-grid-cols-3 tw-col-span-3 tw-grid-rows-4 tw-row-span-4">
       <template v-for="num in numeric">
-        <NumberButton class="bg-primary" :display-number="num" @click="(e)=>emit('click',e)" />
+        <NumberButton class="tw-bg-primary" :display-number="num" @click="(e)=>emit('click',e)" />
       </template>
     </div>
-    <div class="grid grid-cols-1 grid-rows-4 col-span-1 row-span-4 gap-4 col-start-4">
+    <div class="tw-grid tw-grid-cols-1 tw-col-span-1 tw-col-start-4 tw-grid-rows-4 tw-row-span-4 tw-gap-4">
       <template v-for="fun in functional">
-        <NumberButton class="bg-secondary" :display-number="fun" @click="(e)=>emit('click',e)" />
+        <NumberButton class="tw-bg-secondary" :display-number="fun" @click="(e)=>emit('click',e)" />
       </template>
     </div>
   </div>

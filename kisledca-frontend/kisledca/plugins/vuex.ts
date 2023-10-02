@@ -7,8 +7,12 @@ const vuexPersist = new VuexPersistence<any, any>({
 });
 
 const store = createStore({
+	strict: true,
 	modules: {
 		calculator: CalculatorModule,
+	},
+	mutations: {
+		RESTORE_MUTATION: vuexPersist.RESTORE_MUTATION, // this mutation **MUST** be named "RESTORE_MUTATION"
 	},
 	plugins: [vuexPersist.plugin],
 });

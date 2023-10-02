@@ -1,20 +1,18 @@
 <script setup lang="ts">
-  import { twMerge, ClassNameValue } from 'tailwind-merge';
-  import { useAttrs, computed } from 'vue';
+  import useTwMerge from './composables/useTwMerge';
+  import useHotKey from './composables/useHotKey';
 
   const props = defineProps<{
     displayNumber:string
+    hotkey?:string
   }>()
   const emit = defineEmits<{(e:'click',displayNumber:string):void}>()
-  const onKeyDown=(e:KeyboardEvent)=>{
-    if(e.key==="displayNumber"){
-      emit("click",props.displayNumber)
-    }
+  function emitHandler(e:Event){
+    emit("click",props.hotkey??props.displayNumber)
   }
-  const attr = useAttrs()
-	const twClass = computed(()=>twMerge("btn rounded", attr.class as ClassNameValue))
-  console.log(attr.class)
+  useHotKey(props.hotkey??props.displayNumber,emitHandler)
+  const {twClass} = useTwMerge("tw-btn tw-rounded")
 </script>
 <template>
-  <button :class="twClass" @click='emit("click",props.displayNumber)' @keydown="onKeyDown">{{props.displayNumber}}</button>
+  <button :class="twClass" @click='emit("click",props.displayNumber)' >{{props.displayNumber}}</button>
 </template>
